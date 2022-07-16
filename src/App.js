@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import Header from './components/header/Header';
 import './App.css';
+import Form from './components/Form/Form';
+import GroceryList from './components/GroceryList/GroceryList';
+import {useState} from 'react'
 
 function App() {
+
+  const [groceryList, setgroceryList]= useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header txt="Grocery List App"/>
+    <Form setgroceryList={setgroceryList} />
+    {groceryList && <GroceryList groceryList={groceryList}/>}
+
     </div>
   );
 }

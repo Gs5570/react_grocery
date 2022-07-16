@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.grocerylist h3{
+  display: flex;
+  flex-direction: column;
+  width: 5px;
+}
